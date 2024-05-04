@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="skills.component.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+    />
+  </head>
+  <body>
+      <div class="skills">Skills</div>
+      <div class="line2"></div>
+      
+      <div class="text">
+        Here you can showcase your skills.
+      </div>
+
+      <div class ="button">
+        <button type ="button" class="skills-child3"  (click)="openModalpopup()">
+          <span class="add-skill">Add Skill</span>
+        </button>
+        </div>
+
+       <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add a New Skill</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="skillTitle">Skill Title:</label>
+            <input type="text" class="form-control" id="skillTitle" placeholder="Enter skill title">
+          </div>
+          <div class="form-group">
+            <label for="skillDescription">Skill Description:</label>
+            <textarea class="form-control" id="skillDescription" rows="3" placeholder="Enter skill description"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closePopup()">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+  </html>
