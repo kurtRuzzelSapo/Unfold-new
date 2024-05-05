@@ -37,21 +37,22 @@
         <h5 class="modal-title" id="exampleModalLongTitle">Add a New Service</h5>
       </div>
       <div class="modal-body">
-        <form>
+        <form [formGroup]="applyForm" (submit)="Insert()">
           <div class="form-group">
             <label for="serviceTitle">Service Title:</label>
-            <input type="text" class="form-control" id="serviceTitle" placeholder="Enter service title">
+            <input formControlName="serviceTitle" type="text" class="form-control" id="serviceTitle" placeholder="Enter service title">
           </div>
           <div class="form-group">
             <label for="serviceDescription">Service Description:</label>
-            <textarea class="form-control" id="serviceDescription" rows="3" placeholder="Enter service description"></textarea>
+            <textarea formControlName="serviceDesc" class="form-control" id="serviceDescription" rows="3" placeholder="Enter service description"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closePopup()">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="closePopup()">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+     
     </div>
   </div>
 </div>
