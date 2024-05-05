@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Status } from './login/login.component';
 
-
-
 @Injectable({
   providedIn: 'root'
 })

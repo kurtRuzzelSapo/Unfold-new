@@ -16,6 +16,7 @@
     />
   </head>
   <body>
+    <h1>kikkfsdfsdhjf</h1>
       <div class="accomplishments">Accomplishments</div>
       <div class="line2"></div>
 
@@ -37,24 +38,24 @@
         <h5 class="modal-title" id="exampleModalLongTitle">Upload a New Accomplishment</h5>
       </div>
       <div class="modal-body">
-        <form>
+        <form [formGroup]="applyForm" (submit)="Insert()">
           <div class="form-group">
             <label for="accomplishmentTitle">Accomplishment Title:</label>
-            <input type="text" class="form-control" id="accomplishmentTitle" placeholder="Enter accomplishment title">
+            <input formControlName="accomTitle" type="text" class="form-control" id="accomplishmentTitle" placeholder="Enter accomplishment title">
           </div>
           <div class="form-group">
             <label for="accomplishmentDescription">Accomplishment Description:</label>
-            <textarea class="form-control" id="accomplishmentDescription" rows="3" placeholder="Enter accomplishment description"></textarea>
+            <textarea formControlName="accomDesc" class="form-control" id="accomplishmentDescription" rows="3" placeholder="Enter accomplishment description"></textarea>
           </div>
           <div class="form-group">
             <label for="accomplishmentImage">Accomplishment Image:</label>
-            <input type="file" class="form-control-file" id="accomplishmentImage">
+            <input formControlName="accomImg" type="file" class="form-control-file" id="accomplishmentImage">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closePopup()">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="closePopup()">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
