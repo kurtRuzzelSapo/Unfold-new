@@ -18,9 +18,15 @@
     <div class="top-nav">
       <div class="top-nav-child"></div>
       <b class="unfold">UNFOLD</b>
-      <b class="edcel-reney-udani"
-        >{{ userDetails.firstName }} {{ userDetails.lastName }}</b
-      >
+      <div>
+        <a *ngIf="userDetails.is_admin === 0" class="view-portfolio" href=""
+          >view portfolio</a
+        >
+
+        <b class="user-details"
+          >{{ userDetails.firstName }} {{ userDetails.lastName }}</b
+        >
+      </div>
     </div>
   </body>
 </html>

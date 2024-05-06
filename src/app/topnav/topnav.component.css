@@ -1,5 +1,9 @@
 /* Styles for the top navigation bar */
 .top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
     width: 100%;
     position: fixed; /* Fixed positioning to stick to the top of the viewport */
     top: 0; /* Aligning to the top of the viewport */
@@ -11,6 +15,7 @@
   /* Styles for the background color div */
   .top-nav-child {
     position: absolute;
+  
     top: 0;
     left: 0;
     width: 100%;
@@ -21,10 +26,8 @@
   
   /* Styles for the "UNFOLD" element */
   .unfold {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 300px; /* Adjusted left position */
+   
+   margin-left: 300px;
     font-size: 50px; /* Adjusted font size */
     color: #fff; /* Text color */
     font-family: 'Inter', sans-serif;
@@ -39,4 +42,20 @@
     font-size: 24px; /* Adjusted font size */
     color: #fff; /* Text color */
     font-family: 'Inter', sans-serif;
+  }
+
+
+  .user-details {
+    font-size: 24px; /* Adjusted font size */
+    color: #fff; /* Text color */
+    font-family: 'Inter', sans-serif;
+
+  }
+  
+  a.view-portfolio {
+    margin-right: 20px;
+    text-decoration: underline;
+    color: #FFFFFF;
+    text-transform: uppercase;
+
   }

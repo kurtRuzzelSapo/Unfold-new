@@ -16,7 +16,7 @@
       <div class="side-nav-item"></div>
       <img class="logo" alt="logo" src="/assets/images/logo.png" />
       <div class="line1"></div>
-      <ul>
+      <ul *ngIf="userDetails.is_admin === 0">
         <li>
           <a
             routerLink="/Home"
@@ -110,6 +110,35 @@
               class="contact"
               alt="Contact Icon"
             />Contact</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/contact"
+            class="contact"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            (click)="logoutUser()"
+          >
+            <img
+              src="assets/icons/logout.png"
+              class="contact"
+              alt="Contact Icon"
+            />Logout</a
+          >
+        </li>
+      </ul>
+
+      <ul *ngIf="userDetails.is_admin === 1">
+        <li>
+          <a
+            routerLink="/Home"
+            class="home"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+          >
+            <img src="assets/icons/home.png" class="home" alt="Home Icon" />
+            Home</a
           >
         </li>
         <li>

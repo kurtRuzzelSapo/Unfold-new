@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Status } from './login/login.component';
 
@@ -24,5 +24,21 @@ export class DataService {
   getRequest(endpoint: string) {
     const result = this.http.get(this.apiURL + endpoint);
     return result;
+  }
+
+  deleteRequest(endpoint: string, data: any): Observable<any> {
+    // Construct query parameters from the data object
+    let params = new HttpParams();
+
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        params = params.append(key, data[key]);
+      }
+    }
+
+    return this.http.delete<any>(`${this.apiURL}${endpoint}`, {
+      params: params 
+    });
+
   }
 }
