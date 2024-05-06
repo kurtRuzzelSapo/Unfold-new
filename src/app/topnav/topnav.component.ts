@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject} from '@angular/core';
 import {CookieService} from 'ngx-cookie-service';
 @Component({
   selector: 'app-topnav',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   providers: [CookieService],
   templateUrl: './topnav.component.html',
   styleUrl: './topnav.component.scss'
