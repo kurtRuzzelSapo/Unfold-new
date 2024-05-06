@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-  <link rel="stylesheet" href="topnav.component.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
-</head>
-<body>
-  <div class="top-nav">
-    <div class="top-nav-child"></div>
-    <b class="unfold">UNFOLD</b>
-    <b class="edcel-reney-udani">Edcel Reney Udani</b>
-  </div>
-</body>
+    <link rel="stylesheet" href="topnav.component.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="top-nav">
+      <div class="top-nav-child"></div>
+      <b class="unfold">UNFOLD</b>
+      <b class="edcel-reney-udani"
+        >{{ userDetails.firstName }} {{ userDetails.lastName }}</b
+      >
+    </div>
+  </body>
 </html>

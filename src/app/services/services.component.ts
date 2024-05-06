@@ -22,7 +22,7 @@ export class ServicesComponent {
   })
 
   Insert() {
-    this.ds.sendRequest('addservice', this.applyForm.value).subscribe(
+    this.ds.sendRequestWitoutMedia('addservice', this.applyForm.value).subscribe(
       (response) => {
         // Handle successful response here if needed
         console.log('Application submitted successfully:', response);

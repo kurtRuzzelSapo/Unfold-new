@@ -11,10 +11,14 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  apiURL: string = 'http://localhost/Unfold-API/api/';
+  apiURL: string = 'http://localhost:8080/unfold-api/api/';
 
-  sendRequest(endpoint: string, data: any): Observable<Status> {
-    return this.http.post<Status>(this.apiURL + endpoint, JSON.stringify(data));
+  sendRequestWithMedia(endpoint: string, data: any): Observable<Status> {
+    return this.http.post<Status>(this.apiURL + endpoint, data);
+  }
+
+  sendRequestWitoutMedia(endpoint: string, data: any, headers: any = null): Observable<Status> {
+    return this.http.post<Status>(this.apiURL + endpoint, JSON.stringify(data), {headers});
   }
 
   getRequest(endpoint: string) {

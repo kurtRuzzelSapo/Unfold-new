@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import {CookieService} from 'ngx-cookie-service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import {
   FormControl,
@@ -19,6 +20,7 @@ export interface Status {
   selector: 'app-login',
   standalone: true,
   imports: [RouterLink, RouterLinkActive, ReactiveFormsModule],
+  providers: [CookieService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -28,15 +30,16 @@ export class LoginComponent {
   message: any;
 Error: any;
 test:any;
+  cookieService = inject(CookieService);  
   constructor(private ds: DataService, private route: Router) {}
-  
+
 
   applyForm = new FormGroup({
     email: new FormControl(null, Validators.required),
     password: new FormControl(null, Validators.required),
   });
     Login() {
-      this.ds.sendRequest('login', this.applyForm.value).subscribe(
+      this.ds.sendRequestWitoutMedia('login', this.applyForm.value).subscribe(
         (response: any) => {
           // this.ds.setUserData(response.payload);
           this.Error = response.status.message;
@@ -45,6 +48,7 @@ test:any;
           // console.log(response.payload.address);
           console.log('Application submitted successfully:', response);
           if (response.status.message == 'Login successful.') {
+            this.cookieService.set("user_details", JSON.stringify(response.payload));
             this.route.navigateByUrl('/Home');
             console.log(this.applyForm);
           }

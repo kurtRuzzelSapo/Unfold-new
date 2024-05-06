@@ -30,7 +30,7 @@ export class ContactComponent {
   })
 
   Insert() {
-    this.ds.sendRequest('addcontact', this.applyForm.value).subscribe(
+    this.ds.sendRequestWitoutMedia('addcontact', this.applyForm.value).subscribe(
       (response) => {
         // Handle successful response here if needed
         console.log('Application submitted successfully:', response);

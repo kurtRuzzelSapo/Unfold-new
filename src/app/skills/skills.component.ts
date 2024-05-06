@@ -29,7 +29,7 @@ export class SkillsComponent {
   })
 
   Insert() {
-    this.ds.sendRequest('addskill', this.applyForm.value).subscribe(
+    this.ds.sendRequestWitoutMedia('addskill', this.applyForm.value).subscribe(
       (response) => {
         // Handle successful response here if needed
         console.log('Application submitted successfully:', response);

@@ -52,7 +52,7 @@
 
 .bio-child3 {
   position: fixed;
-  top: 80%; /* Adjust as needed */
+  top: 50%; /* Adjust as needed */
   left: 55%; /* Adjust as needed */
   transform: translate(-50%, -50%);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
