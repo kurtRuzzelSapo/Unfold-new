@@ -9,11 +9,13 @@ import {
 } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { SidenavComponent } from '../sidenav/sidenav.component';
+import { TopnavComponent } from '../topnav/topnav.component';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,SidenavComponent,TopnavComponent],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
