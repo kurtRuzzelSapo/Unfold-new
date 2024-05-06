@@ -7,6 +7,7 @@ import { Status } from './login/login.component';
   providedIn: 'root'
 })
 export class DataService {
+  userData: any;
 
   constructor(private http: HttpClient) {}
 

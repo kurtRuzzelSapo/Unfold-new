@@ -9,10 +9,12 @@ import {
 } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { SidenavComponent } from '../sidenav/sidenav.component';
+import { TopnavComponent } from '../topnav/topnav.component';
 @Component({
   selector: 'app-accomplishments',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,SidenavComponent,TopnavComponent],
   templateUrl: './accomplishments.component.html',
   styleUrl: './accomplishments.component.scss'
 })

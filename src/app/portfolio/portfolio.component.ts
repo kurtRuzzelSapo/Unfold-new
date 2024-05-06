@@ -4,10 +4,12 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup,ReactiveFormsModule,Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { SidenavComponent } from '../sidenav/sidenav.component';
+import { TopnavComponent } from '../topnav/topnav.component';
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,SidenavComponent,TopnavComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
