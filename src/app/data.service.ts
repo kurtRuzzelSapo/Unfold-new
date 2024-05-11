@@ -11,19 +11,34 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  apiURL: string = 'http://localhost:8080/unfold-api/api/';
+  apiURL: string = 'http://localhost/unfold-api/api/';
+
+  private generateQueryString(params: any): string {
+    if (!params) return ''; // If no parameters, return an empty string
+    return '?' + Object.keys(params).map(key => key + '=' + encodeURIComponent(params[key])).join('&');
+  }
 
   sendRequestWithMedia(endpoint: string, data: any): Observable<Status> {
     return this.http.post<Status>(this.apiURL + endpoint, data);
   }
 
-  sendRequestWitoutMedia(endpoint: string, data: any, headers: any = null): Observable<Status> {
-    return this.http.post<Status>(this.apiURL + endpoint, JSON.stringify(data), {headers});
+  // sendRequestWitoutMedia(endpoint: string, data: any, headers: any = null): Observable<Status> {
+  //   return this.http.post<Status>(this.apiURL + endpoint, JSON.stringify(data), {headers});
+  // }
+  sendRequestWitoutMedia(endpoint: string, data: any, ): Observable<Status> {
+    return this.http.post<Status>(this.apiURL + endpoint, data);
   }
 
   getRequest(endpoint: string) {
     const result = this.http.get(this.apiURL + endpoint);
     return result;
+  }
+
+  getRequestWithParams(endpoint: string, params: any) {
+
+    const url = this.apiURL + endpoint + this.generateQueryString(params);
+
+    return this.http.get(url);
   }
 
   deleteRequest(endpoint: string, data: any): Observable<any> {

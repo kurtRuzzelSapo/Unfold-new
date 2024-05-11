@@ -14,13 +14,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit{
-userDetails: any
+  selectedFile: any;
+userDetails: any;
+formData:any
 cookieService = inject(CookieService);
 studentList: any = [];
-
+studentPortfolio: any ={};
+baseAPI:string = 'http://localhost/unfold-api'
 constructor(private ds: DataService){}
 
   ngOnInit(): void {
+    this.formData = new FormData();
       this.userDetails = JSON.parse(this.cookieService.get('user_details'));
 
       this.ds.getRequest("get-all-students").subscribe(
@@ -32,7 +36,24 @@ constructor(private ds: DataService){}
           console.error('Error submitting application:', error);
         }
       )
+
+      this.ds.getRequestWithParams("view-portfolio",{id: this.userDetails.studentID}).subscribe(
+        (response: any) => {
+          this.studentPortfolio = response
+          console.log('View Portfolio details:', response);
+        },
+        (error) => {
+          console.error('Error submitting application:', error);
+        }
+      )
   }
+
+  editProject(index: number): void {
+    const selectedProject = this.studentPortfolio.project[index];
+    // Implement your edit functionality here, for example:
+    console.log("Editing project:", selectedProject);
+  }
+  
 
   deleteStudent(data: any): void {
     console.log("click");
@@ -57,4 +78,10 @@ constructor(private ds: DataService){}
     )
 
   }
+  onFileSelected(event: any) {
+    if (event.target.files.length > 0) {
+      this.selectedFile = event.target.files[0];
+    }
+  }
+
 }
