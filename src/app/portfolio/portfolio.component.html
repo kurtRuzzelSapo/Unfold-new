@@ -45,18 +45,18 @@
   <div class="text">Here you can showcase your projects.</div>
 
   <div class="button">
-    <button type="button" class="portfolio-child1" (click)="openModalpopup()">
+    <button type="button" class="portfolio-child1"  (click)="openModalpopup()">
       <span class="upload-a-new">Upload a New Project</span>
     </button>
   </div>
 
-  <table style="width: 50%; margin-top: 20%; margin-left: 30%;" class="table">
+  <!-- <table style="width: 50%; margin-top: 20%; margin-left: 30%;" class="table">
     <thead>
       <tr>
         <th scope="col">Image</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
-        <th scope="col">Actions</th> <!-- Add a column for actions -->
+        <th scope="col">Actions</th> 
       </tr>
     </thead>
     <tbody>
@@ -67,14 +67,14 @@
         <td>{{project.projectTitle}}</td>
         <td><p>{{project.projectDesc}}</p></td>
         <td>
-          <!-- <button type="button" class="btn btn-primary" value="" (click)="editopenModalpopup()">Edit</button> -->
+
           <button type="button" class="btn btn-primary" (click)="editopenModalpopup(project.projectTitle, project.projectDesc, baseAPI + project.projectImg, project.projectID)">Edit</button>
-        </td> <!-- Add edit button with a click event -->
+        </td> 
       </tr>
     
   
       
-      <!-- <tr *ngFor="let adding++">
+      <tr *ngFor="let adding++">
         <th scope="row"><img style="width: 20%; height: 10%;" [src]="baseAPI + studentPortfolio.project[0].projectImg" alt="Student img" /></th>
         <td>{{studentPortfolio.project[0].projectTitle}}</td>
         <td><p>{{studentPortfolio.project[0].projectDesc}}</p></td>
@@ -85,9 +85,9 @@
         <td>{{studentPortfolio.project[1].projectTitle}}</td>
         <td><p>{{studentPortfolio.project[1].projectDesc}}</p></td>
         
-      </tr> -->
+      </tr>
     </tbody>
-  </table>
+  </table> -->
   <!-- Modal -->
   <div
     class="modal fade"

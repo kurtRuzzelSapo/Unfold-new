@@ -11,11 +11,12 @@ import { Router } from '@angular/router';
 import { SidenavComponent } from '../sidenav/sidenav.component';
 import { TopnavComponent } from '../topnav/topnav.component';
 import { CookieService } from 'ngx-cookie-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-aboutme',
   standalone: true,
-  imports: [ReactiveFormsModule, SidenavComponent, TopnavComponent],
+  imports: [ReactiveFormsModule, SidenavComponent, TopnavComponent, CommonModule],
   templateUrl: './aboutme.component.html',
   styleUrl: './aboutme.component.scss',
 })
@@ -25,6 +26,9 @@ export class AboutmeComponent implements OnInit {
   formData: any;
   userDetails: any;
   applyForm: any;
+  studentList: any = [];
+studentPortfolio: any ={};
+baseAPI:string = 'http://localhost/unfold-api'
   constructor(private ds: DataService, private route: Router) {}
 
   ngOnInit(): void {
@@ -37,6 +41,16 @@ export class AboutmeComponent implements OnInit {
       aboutBio: new FormControl(null, Validators.required),
       aboutImg: new FormControl(null, Validators.required),
     });
+
+    this.ds.getRequestWithParams("view-portfolio",{id: this.userDetails.studentID}).subscribe(
+      (response: any) => {
+        this.studentPortfolio = response
+        console.log('View Portfolio details:', response);
+      },
+      (error) => {
+        console.error('Error submitting application:', error);
+      }
+    )
   }
 
   onFileSelected(event: any) {

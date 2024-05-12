@@ -56,4 +56,8 @@ export class DataService {
     });
 
   }
+
+  sendRequest(endpoint: string, data: any): Observable<Status> {
+    return this.http.post<Status>(this.apiURL + endpoint, JSON.stringify(data));
+  }
 }

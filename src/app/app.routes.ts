@@ -9,6 +9,7 @@ import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
 
@@ -21,4 +22,5 @@ export const routes: Routes = [
     { title: "Unfold | Services", path: 'services', component: ServicesComponent },
     { title: "Unfold | Contact", path: 'contact', component: ContactComponent },
     { title: "Unfold | Login", path: 'login', component: LoginComponent },
+    { title: "Unfold | Signup", path: 'signup', component: SignupComponent },
 ];
