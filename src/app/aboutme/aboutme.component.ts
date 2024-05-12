@@ -38,7 +38,7 @@ baseAPI:string = 'http://localhost/unfold-api'
 
 
     this.applyForm = new FormGroup({
-      aboutBio: new FormControl(null, Validators.required),
+      aboutText: new FormControl(null, Validators.required),
       aboutImg: new FormControl(null, Validators.required),
     });
 

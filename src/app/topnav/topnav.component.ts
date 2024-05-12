@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject} from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 @Component({
   selector: 'app-topnav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink, RouterLinkActive, ReactiveFormsModule],
   providers: [CookieService],
   templateUrl: './topnav.component.html',
   styleUrl: './topnav.component.scss'

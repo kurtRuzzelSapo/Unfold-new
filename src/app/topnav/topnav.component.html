@@ -19,9 +19,19 @@
       <div class="top-nav-child"></div>
       <b class="unfold">UNFOLD</b>
       <div>
-        <a *ngIf="userDetails.is_admin === 0" class="view-portfolio" href=""
+
+        <!-- <a class="view-portfolio"  routerLink="/signup" class="fw-bold text-danger">Here!</a> -->
+
+        <a style="text-decoration: none; font-weight: bold;" *ngIf="userDetails.is_admin === 0" routerLink="/Home" class="view-portfolio" href=""
+          >Main menu</a
+        >
+        <a style="text-decoration: none; font-weight: bold;" *ngIf="userDetails.is_admin === 0" routerLink="/viewport"class="view-portfolio" href=""
           >view portfolio</a
         >
+        <a style="text-decoration: none; font-weight: bold;" *ngIf="userDetails.is_admin === 0" routerLink="/newsfeed" class="view-portfolio" href=""
+          >Newsfeed</a
+        >
+       
 
         <b class="user-details"
           >{{ userDetails.firstName }} {{ userDetails.lastName }}</b

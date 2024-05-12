@@ -10,6 +10,8 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
+import { NewsfeedComponent } from './newsfeed/newsfeed.component';
+import { ViewportComponent } from './viewport/viewport.component';
 
 export const routes: Routes = [
 
@@ -23,4 +25,6 @@ export const routes: Routes = [
     { title: "Unfold | Contact", path: 'contact', component: ContactComponent },
     { title: "Unfold | Login", path: 'login', component: LoginComponent },
     { title: "Unfold | Signup", path: 'signup', component: SignupComponent },
+    { title: "Unfold | Newsfeed", path: 'newsfeed', component: NewsfeedComponent },
+    { title: "Unfold | ViewPortfolio", path: 'viewport', component: ViewportComponent },
 ];
