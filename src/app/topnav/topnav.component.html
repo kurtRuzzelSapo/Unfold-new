@@ -19,13 +19,13 @@
       <div class="top-nav-child"></div>
       <b class="unfold">UNFOLD</b>
       <div>
-        <a *ngIf="userDetails.is_admin === 0" class="view-portfolio" href=""
-          >view portfolio</a
-        >
-
-        <b class="user-details"
-          >{{ userDetails.firstName }} {{ userDetails.lastName }}</b
-        >
+        <!-- <a *ngIf="userDetails.is_admin === 0" class="view-portfolio"
+        routerLink="/viewport"
+        class="viewport">view portfolio</a> -->
+        <a *ngIf="userDetails.is_admin === 0" routerLink="/viewport" class="view-portfolio" routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >View Portfolio</a>
+        <b class="user-details">{{ userDetails.firstName }} {{ userDetails.lastName }}</b>
       </div>
     </div>
   </body>

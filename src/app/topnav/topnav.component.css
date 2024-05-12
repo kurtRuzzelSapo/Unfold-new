@@ -5,9 +5,9 @@
   align-items: center;
   padding: 20px;
     width: 100%;
-    position: fixed; /* Fixed positioning to stick to the top of the viewport */
+    position: absolute; /* Fixed positioning to stick to the top of the viewport */
     top: 0; /* Aligning to the top of the viewport */
-    background: linear-gradient(180deg, #b2e7cb, #d6fde9); /* Gradient background */
+    background-color: #40916c; /* Background color */
     height: 88px; /* Height of the top navigation bar */
     overflow: hidden;
   }
@@ -15,12 +15,11 @@
   /* Styles for the background color div */
   .top-nav-child {
     position: absolute;
-  
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #40916c; /* Background color */
+   
     z-index: -1; /* Ensure it's behind the content */
   }
   
@@ -46,16 +45,19 @@
 
 
   .user-details {
-    font-size: 24px; /* Adjusted font size */
+    font-size: 20px; /* Adjusted font size */
     color: #fff; /* Text color */
-    font-family: 'Inter', sans-serif;
-
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase; /* Capitalize each word */
   }
   
+  
   a.view-portfolio {
-    margin-right: 20px;
-    text-decoration: underline;
+    margin-right: 30px;
+    font-size: 20px;
+    text-decoration: none;
     color: #FFFFFF;
-    text-transform: uppercase;
-
+    font-family: 'Poppins', sans-serif;
   }
+
+  
