@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-viewport',
   standalone: true,
@@ -15,6 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './viewport.component.html',
   styleUrl: './viewport.component.css'
 })
+
+
 export class ViewportComponent {
   formData:any  
   userDetails: any;
@@ -22,9 +24,10 @@ export class ViewportComponent {
   cookieService = inject(CookieService);
   studentList: any = [CommonModule];
   studentPortfolio: any ={};
+  studentID: any;
 
   baseAPI:string = 'http://localhost/unfold-api'
-  constructor(private ds: DataService){}
+  constructor(private ds: DataService,private route: ActivatedRoute){}
 
   ngOnInit(): void {
     this.formData = new FormData();
@@ -40,6 +43,23 @@ export class ViewportComponent {
         }
       )
 
+
+      this.route.params.subscribe(params => {
+        // Access parameter values
+        const studentID = params['studentID'];
+        // console.log('Student ID:', studentID);
+
+        this.ds.getRequestWithParams("view-portfolio",{id: studentID}).subscribe(
+          (response: any) => {
+            this.studentPortfolio = response
+            console.log('View Portfolio details:', response);
+          },
+          (error) => {
+            console.error('Error submitting application:', error);
+          }
+        )
+      });
+
       // this.ds.getRequest("view-allportfolio").subscribe(
       //   (response: any) => {
       //     this.studentPortfolio = response
@@ -52,14 +72,6 @@ export class ViewportComponent {
       // )
 
       
-      this.ds.getRequestWithParams("view-portfolio",{id: this.userDetails.studentID}).subscribe(
-        (response: any) => {
-          this.studentPortfolio = response
-          console.log('View Portfolio details:', response);
-        },
-        (error) => {
-          console.error('Error submitting application:', error);
-        }
-      )
+     
   }
 }

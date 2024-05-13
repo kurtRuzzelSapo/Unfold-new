@@ -26,5 +26,5 @@ export const routes: Routes = [
     { title: "Unfold | Login", path: 'login', component: LoginComponent },
     { title: "Unfold | Signup", path: 'signup', component: SignupComponent },
     { title: "Unfold | Newsfeed", path: 'newsfeed', component: NewsfeedComponent },
-    { title: "Unfold | ViewPortfolio", path: 'viewport', component: ViewportComponent },
+    { title: "Unfold | ViewPortfolio", path: 'viewport/:studentID', component: ViewportComponent },
 ];

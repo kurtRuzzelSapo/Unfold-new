@@ -39,6 +39,7 @@ export class NewsfeedComponent {
         }
       )
 
+
       this.ds.getRequest("view-allportfolio").subscribe(
         (response: any) => {
           this.studentPortfolio = response
@@ -51,8 +52,11 @@ export class NewsfeedComponent {
       )
   }
 
-  View(studentID: string){
+  ViewPortfolio(e:any,studentID: string){
+    e.preventDefault();
     this.route.navigateByUrl(`viewport/${studentID}`);
+   
+    
     console.log(studentID);
   }
 }
