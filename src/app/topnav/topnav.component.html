@@ -25,7 +25,7 @@
         <a style="text-decoration: none; font-weight: bold;" *ngIf="userDetails.is_admin === 0" routerLink="/Home" class="view-portfolio" href=""
           >Main menu</a
         >
-        <a style="text-decoration: none; font-weight: bold;" *ngIf="userDetails.is_admin === 0" routerLink="/viewport"class="view-portfolio" href=""
+        <a style="text-decoration: none; font-weight: bold;" *ngIf="userDetails.is_admin === 0" routerLink="/viewport/:studentID'"class="view-portfolio" href=""
           >view portfolio</a
         >
         <a style="text-decoration: none; font-weight: bold;" *ngIf="userDetails.is_admin === 0" routerLink="/newsfeed" class="view-portfolio" href=""
