@@ -1,3 +1,56 @@
+<nav
+style="background-color: #40916c"
+class="navbar navbar-expand-lg fixed-top navbar-dark navbarScroll"
+>
+<div class="container">
+  <a class="navbar-brand" href="#">Unfold</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          *ngIf="userDetails.is_admin === 0"
+          routerLink="/Home"
+          >Main menu</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="userDetails.is_admin === 0"
+          routerLink="/newsfeed"
+          >Newsfeed</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="userDetails.is_admin === 0"
+          routerLink="/viewport"
+          >View Portfolio</a
+        >
+      </li>
+      <!-- <li class="nav-item">
+                  <a class="nav-link" >Portfolio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" >Contact</a>
+              </li> -->
+    </ul>
+  </div>
+</div>
+</nav>
 <main
   style="
     text-decoration: none;
@@ -48,5 +101,5 @@
   </div>
 </main>
 <div style="z-index: 100">
-  <app-topnav></app-topnav>
+  <!-- <app-topnav></app-topnav> -->
 </div>

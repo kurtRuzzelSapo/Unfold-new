@@ -20,7 +20,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ViewportComponent {
   formData:any  
   userDetails: any;
- 
+ studentImage: any;
   cookieService = inject(CookieService);
   studentList: any = [CommonModule];
   studentPortfolio: any ={};
@@ -53,6 +53,7 @@ export class ViewportComponent {
           (response: any) => {
             this.studentPortfolio = response
             console.log('View Portfolio details:', response);
+            this.studentImage = `${this.baseAPI}${this.studentPortfolio.about.aboutImg}`;
           },
           (error) => {
             console.error('Error submitting application:', error);
