@@ -11,7 +11,7 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  apiURL: string = 'http://localhost/unfold-api/api/';
+  apiURL: string = 'http://localhost:8080/unfold-api/api/';
 
   private generateQueryString(params: any): string {
     if (!params) return ''; // If no parameters, return an empty string
